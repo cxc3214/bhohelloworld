@@ -27,13 +27,14 @@ namespace BHO_HelloWorld
             document = (HTMLDocument)webBrowser.Document;
             if (document.url == "http://www.google.cn/")
             {
-
+              
                 var origLength = document.all.length;
+
                 document.body.innerHTML += "document.all.length=" + origLength + "<br />";
 
-                foreach (IHTMLInputElement pageElement in document.all)
+                foreach (IHTMLElement pageElement in document.all)
                 {
-                    document.body.innerHTML += "document.all[" + pageElement.name + "]=" + pageElement.name + "<br />";
+                    document.body.innerHTML += "document.all[" + pageElement.tagName + "]=" + pageElement.document + "<br />";
                 }
 
             }
