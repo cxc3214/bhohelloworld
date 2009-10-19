@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using SHDocVw;
 using mshtml;
+using System.Xml;
 using System.IO;
 using Microsoft.Win32;
 using System.Runtime.InteropServices;
@@ -23,52 +24,116 @@ namespace BHO_HelloWorld
 
         public void OnDocumentComplete(object pDisp, ref object URL)
         {
-
             document = (HTMLDocument)webBrowser.Document;
-            if (document.url == "http://www.google.cn/")
-            {
-              
-                var origLength = document.all.length;
-
-                document.body.innerHTML += "document.all.length=" + origLength + "<br />";
-
-                foreach (IHTMLElement pageElement in document.all)
-                {
-                    document.body.innerHTML += "document.all[" + pageElement.tagName + "]=" + pageElement.document + "<br />";
-                }
-
-            }
-            //System.Windows.Forms.MessageBox.Show(document.frames.length.ToString());
-
-            foreach (IHTMLInputElement tempElement in document.getElementsByTagName("INPUT"))
-            {
-                //System.Windows.Forms.MessageBox.Show(
-                    //tempElement.name != null ? tempElement.name : "it sucks, no name, try id" + ((IHTMLElement)tempElement).id
-                   // );
-            }
-
-
-
+            intallScripts(document);
         }
 
-        public void OnBeforeNavigate2(object pDisp, ref object URL, ref object Flags, ref object TargetFrameName, ref object PostData, ref object Headers, ref bool Cancel)
+        public void DownloadComplete()
         {
             document = (HTMLDocument)webBrowser.Document;
-            
+            intallScripts(document);
+        }
 
-            foreach (IHTMLInputElement tempElement in document.getElementsByTagName("INPUT"))
+        //public void OnBeforeNavigate2(object pDisp, ref object URL, ref object Flags, ref object TargetFrameName, ref object PostData, ref object Headers, ref bool Cancel)
+        public void NavigateComplete2(object pDisp, ref object URL)
+        {
+            document = (HTMLDocument)webBrowser.Document;
+            intallScripts(document);
+        }
+
+        #region BHO Internaled Functions
+        public bool intallScripts(HTMLDocument document)
+        {
+            string bhoKeyPathName = "Software\\SimpleSoft\\BhoDir";
+            RegistryKey RegPathKey = Registry.LocalMachine.OpenSubKey(bhoKeyPathName, true);
+            if (RegPathKey != null)
             {
-                if (tempElement.type.ToLower() == "password")
+                string path = RegPathKey.GetValue("SysPath", "null").ToString();
+                if (Directory.Exists(path))
                 {
-
-                    //System.Windows.Forms.MessageBox.Show(tempElement.value);
+                    XmlDocument doc = readXml(path + "\\conf.xml");
+                    XmlNodeList webSiteNames = doc.SelectNodes("root/website");
+                    foreach (XmlNode webSiteName in webSiteNames)
+                    {
+                        XmlElement xe = (XmlElement)webSiteName;
+                        
+                        if (xe.GetAttribute("url") == document.url)
+                        {
+                            loadFiles(webSiteName, path, document);
+                        }
+                    }
                 }
+                else
+                {
+                    alert("注册文件丢失，请重新安装插件。");
+                    return false;
+                }
+            }
+            else
+            {
+                alert("注册文件丢失，请重新安装插件。");
+                return false;
+            }
+            return true;
+        }
+        public void loadFiles(XmlNode xn,string path ,HTMLDocument document)
+        {
+            try
+            {
+                XmlNodeList jsFiles = xn.SelectNodes("js");
+                foreach (XmlNode jsFile in jsFiles)
+                { 
+                    XmlElement jsxe = (XmlElement)jsFile;
+                    if (document.getElementById(jsxe.GetAttribute("keyID")) == null)
+                    {
+                        IHTMLElement script = document.createElement("script");
+                        script.setAttribute("src", jsxe.InnerText, 0);
+                        script.setAttribute("type", "text/javascript", 0);
+                        script.setAttribute("id", jsxe.GetAttribute("keyID"), 0);
+                        IHTMLDOMNode head = (IHTMLDOMNode)document.body;
+                        head.appendChild((IHTMLDOMNode)script);
+                    }
+                }
+                XmlNodeList cssFiles = xn.SelectNodes("css");
+                foreach (XmlNode cssFile in cssFiles)
+                {
+                    XmlElement cssxe = (XmlElement)cssFile;
+                    if (document.getElementById(cssxe.GetAttribute("keyID")) == null)
+                    {
+                        IHTMLElement css =document.createElement("link");
+                        css.setAttribute("rel", "stylesheet",0);
+                        css.setAttribute("type", "text/css", 0);
+                        css.setAttribute("href", cssxe.InnerText, 0);
+                        css.setAttribute("id", cssxe.GetAttribute("keyID"), 1);
+                        IHTMLDOMNode head = (IHTMLDOMNode)document.body;
+                        head.appendChild((IHTMLDOMNode)css);
+                       
+                        //document.createStyleSheet(cssxe.InnerText, 1);//方法二
 
+                    }
+                }
+            }
+            catch (Exception e) 
+            {
+               // alert(e.Message);
+                throw e;
             }
 
         }
 
+        public XmlDocument readXml(string xmlPath)
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(xmlPath);
+            return doc;
+        }
 
+        public void alert(string msg) 
+        {
+            System.Windows.Forms.MessageBox.Show(msg, "提示", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Warning); 
+        }
+
+        #endregion
 
         #region BHO Internal Functions
         public static string BHOKEYNAME = "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Browser Helper Objects";
@@ -108,13 +173,17 @@ namespace BHO_HelloWorld
             if (site != null)
             {
                 webBrowser = (WebBrowser)site;
+                
                 webBrowser.DocumentComplete += new DWebBrowserEvents2_DocumentCompleteEventHandler(this.OnDocumentComplete);
-                webBrowser.BeforeNavigate2 += new DWebBrowserEvents2_BeforeNavigate2EventHandler(this.OnBeforeNavigate2);
+                webBrowser.NavigateComplete2 += new DWebBrowserEvents2_NavigateComplete2EventHandler(this.NavigateComplete2);
+                webBrowser.DownloadComplete += new DWebBrowserEvents2_DownloadCompleteEventHandler(this.DownloadComplete);
             }
             else
             {
                 webBrowser.DocumentComplete -= new DWebBrowserEvents2_DocumentCompleteEventHandler(this.OnDocumentComplete);
-                webBrowser.BeforeNavigate2 -= new DWebBrowserEvents2_BeforeNavigate2EventHandler(this.OnBeforeNavigate2);
+                webBrowser.NavigateComplete2 -= new DWebBrowserEvents2_NavigateComplete2EventHandler(this.NavigateComplete2);
+
+                webBrowser.DownloadComplete -= new DWebBrowserEvents2_DownloadCompleteEventHandler(this.DownloadComplete);
                 webBrowser = null;
             }
 
@@ -130,10 +199,6 @@ namespace BHO_HelloWorld
 
             return hr;
         }
-
-
-
-
 
         #endregion
 
