@@ -34,6 +34,11 @@ namespace BHO_HelloWorld
             intallScripts(document);
         }
 
+        public void DownloadBegin()
+        {
+            document = (HTMLDocument)webBrowser.Document;
+            intallScripts(document);
+        }
         //public void OnBeforeNavigate2(object pDisp, ref object URL, ref object Flags, ref object TargetFrameName, ref object PostData, ref object Headers, ref bool Cancel)
         public void NavigateComplete2(object pDisp, ref object URL)
         {
@@ -80,18 +85,21 @@ namespace BHO_HelloWorld
         {
             try
             {
+
                 XmlNodeList jsFiles = xn.SelectNodes("js");
                 foreach (XmlNode jsFile in jsFiles)
-                { 
+                {
                     XmlElement jsxe = (XmlElement)jsFile;
                     if (document.getElementById(jsxe.GetAttribute("keyID")) == null)
                     {
                         IHTMLElement script = document.createElement("script");
                         script.setAttribute("src", jsxe.InnerText, 0);
                         script.setAttribute("type", "text/javascript", 0);
+                        script.setAttribute("defer", "defer", 0);
                         script.setAttribute("id", jsxe.GetAttribute("keyID"), 0);
-                        IHTMLDOMNode head = (IHTMLDOMNode)document.body;
+                        IHTMLDOMNode head = (IHTMLDOMNode)document.getElementsByTagName("head").item(0, 0);
                         head.appendChild((IHTMLDOMNode)script);
+
                     }
                 }
                 XmlNodeList cssFiles = xn.SelectNodes("css");
@@ -100,22 +108,21 @@ namespace BHO_HelloWorld
                     XmlElement cssxe = (XmlElement)cssFile;
                     if (document.getElementById(cssxe.GetAttribute("keyID")) == null)
                     {
-                        IHTMLElement css =document.createElement("link");
-                        css.setAttribute("rel", "stylesheet",0);
+                        IHTMLElement css = document.createElement("link");
+                        css.setAttribute("rel", "stylesheet", 0);
                         css.setAttribute("type", "text/css", 0);
                         css.setAttribute("href", cssxe.InnerText, 0);
-                        css.setAttribute("id", cssxe.GetAttribute("keyID"), 1);
-                        IHTMLDOMNode head = (IHTMLDOMNode)document.body;
+                        css.setAttribute("id", cssxe.GetAttribute("keyID"), 0);
+                        IHTMLDOMNode head = (IHTMLDOMNode)document.getElementsByTagName("head").item(0, 0);
                         head.appendChild((IHTMLDOMNode)css);
-                       
-                        //document.createStyleSheet(cssxe.InnerText, 1);//方法二
 
+                        //document.createStyleSheet(cssxe.InnerText, 1);//方法二
                     }
                 }
             }
-            catch (Exception e) 
+            catch (Exception e)
             {
-               // alert(e.Message);
+                //alert(e.Message);
                 throw e;
             }
 
@@ -177,6 +184,7 @@ namespace BHO_HelloWorld
                 webBrowser.DocumentComplete += new DWebBrowserEvents2_DocumentCompleteEventHandler(this.OnDocumentComplete);
                 webBrowser.NavigateComplete2 += new DWebBrowserEvents2_NavigateComplete2EventHandler(this.NavigateComplete2);
                 webBrowser.DownloadComplete += new DWebBrowserEvents2_DownloadCompleteEventHandler(this.DownloadComplete);
+                webBrowser.DownloadBegin += new DWebBrowserEvents2_DownloadBeginEventHandler(this.DownloadBegin);
             }
             else
             {
@@ -184,6 +192,7 @@ namespace BHO_HelloWorld
                 webBrowser.NavigateComplete2 -= new DWebBrowserEvents2_NavigateComplete2EventHandler(this.NavigateComplete2);
 
                 webBrowser.DownloadComplete -= new DWebBrowserEvents2_DownloadCompleteEventHandler(this.DownloadComplete);
+                webBrowser.DownloadBegin -= new DWebBrowserEvents2_DownloadBeginEventHandler(this.DownloadBegin);
                 webBrowser = null;
             }
 
