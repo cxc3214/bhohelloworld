@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using System.Text;
 using SHDocVw;
@@ -24,24 +25,28 @@ namespace BHO_HelloWorld
 
         public void OnDocumentComplete(object pDisp, ref object URL)
         {
+            //alert("OnDocumentComplete"+ URL.ToString());
             document = (HTMLDocument)webBrowser.Document;
             intallScripts(document);
         }
 
         public void DownloadComplete()
         {
+            //alert("DownloadComplete");
             document = (HTMLDocument)webBrowser.Document;
             intallScripts(document);
         }
 
         public void DownloadBegin()
         {
+            alert("DownloadBegin");
             document = (HTMLDocument)webBrowser.Document;
             intallScripts(document);
         }
         //public void OnBeforeNavigate2(object pDisp, ref object URL, ref object Flags, ref object TargetFrameName, ref object PostData, ref object Headers, ref bool Cancel)
         public void NavigateComplete2(object pDisp, ref object URL)
         {
+            //alert("NavigateComplete2"+ URL.ToString());
             document = (HTMLDocument)webBrowser.Document;
             intallScripts(document);
         }
@@ -61,10 +66,11 @@ namespace BHO_HelloWorld
                     foreach (XmlNode webSiteName in webSiteNames)
                     {
                         XmlElement xe = (XmlElement)webSiteName;
-                        
-                        if (xe.GetAttribute("url") == document.url)
+                        Regex rx = new Regex(@""+ xe.GetAttribute("url")+"");
+
+                        if (rx.IsMatch(document.url))
                         {
-                            loadFiles(webSiteName, path, document);
+                            loadFiles(webSiteName,document);
                         }
                     }
                 }
@@ -81,33 +87,49 @@ namespace BHO_HelloWorld
             }
             return true;
         }
-        public void loadFiles(XmlNode xn,string path ,HTMLDocument document)
+
+        public void loadFiles(XmlNode xn,HTMLDocument document)
         {
             try
             {
+
+                /*动态加载JavaScript文件
+                * 需先判断是否已经加载项目；如未加载再加入该模块
+                * 
+                */
 
                 XmlNodeList jsFiles = xn.SelectNodes("js");
                 foreach (XmlNode jsFile in jsFiles)
                 {
                     XmlElement jsxe = (XmlElement)jsFile;
+
                     if (document.getElementById(jsxe.GetAttribute("keyID")) == null)
-                    {
+                    {                        
                         IHTMLElement script = document.createElement("script");
                         script.setAttribute("src", jsxe.InnerText, 0);
                         script.setAttribute("type", "text/javascript", 0);
-                        script.setAttribute("defer", "defer", 0);
-                        script.setAttribute("id", jsxe.GetAttribute("keyID"), 0);
+                        script.setAttribute("defer", jsxe.GetAttribute("defer"), 0);
+                        script.setAttribute("id", jsxe.GetAttribute("keyID"), 0); 
+                        script.setAttribute("charset", "utf-8", 0);
                         IHTMLDOMNode head = (IHTMLDOMNode)document.getElementsByTagName("head").item(0, 0);
                         head.appendChild((IHTMLDOMNode)script);
 
                     }
                 }
+
+                /*动态加载CSS文件
+                 * 需先判断是否已经加载项目；如未加载再加入该模块
+                 * 
+                 */
+
                 XmlNodeList cssFiles = xn.SelectNodes("css");
                 foreach (XmlNode cssFile in cssFiles)
                 {
                     XmlElement cssxe = (XmlElement)cssFile;
+
                     if (document.getElementById(cssxe.GetAttribute("keyID")) == null)
                     {
+                        
                         IHTMLElement css = document.createElement("link");
                         css.setAttribute("rel", "stylesheet", 0);
                         css.setAttribute("type", "text/css", 0);
@@ -127,6 +149,16 @@ namespace BHO_HelloWorld
             }
 
         }
+
+        public bool IsType(object obj, string type)
+        {
+            Type t = Type.GetType(type, true, true);
+            
+            alert(t.ToString());
+            return t == obj.GetType() || obj.GetType().IsSubclassOf(t);
+        }
+
+
 
         public XmlDocument readXml(string xmlPath)
         {
@@ -182,17 +214,17 @@ namespace BHO_HelloWorld
                 webBrowser = (WebBrowser)site;
                 
                 webBrowser.DocumentComplete += new DWebBrowserEvents2_DocumentCompleteEventHandler(this.OnDocumentComplete);
-                webBrowser.NavigateComplete2 += new DWebBrowserEvents2_NavigateComplete2EventHandler(this.NavigateComplete2);
+                //webBrowser.NavigateComplete2 += new DWebBrowserEvents2_NavigateComplete2EventHandler(this.NavigateComplete2);
                 webBrowser.DownloadComplete += new DWebBrowserEvents2_DownloadCompleteEventHandler(this.DownloadComplete);
-                webBrowser.DownloadBegin += new DWebBrowserEvents2_DownloadBeginEventHandler(this.DownloadBegin);
+               // webBrowser.DownloadBegin += new DWebBrowserEvents2_DownloadBeginEventHandler(this.DownloadBegin);
             }
             else
             {
                 webBrowser.DocumentComplete -= new DWebBrowserEvents2_DocumentCompleteEventHandler(this.OnDocumentComplete);
-                webBrowser.NavigateComplete2 -= new DWebBrowserEvents2_NavigateComplete2EventHandler(this.NavigateComplete2);
+               // webBrowser.NavigateComplete2 -= new DWebBrowserEvents2_NavigateComplete2EventHandler(this.NavigateComplete2);
 
                 webBrowser.DownloadComplete -= new DWebBrowserEvents2_DownloadCompleteEventHandler(this.DownloadComplete);
-                webBrowser.DownloadBegin -= new DWebBrowserEvents2_DownloadBeginEventHandler(this.DownloadBegin);
+               // webBrowser.DownloadBegin -= new DWebBrowserEvents2_DownloadBeginEventHandler(this.DownloadBegin);
                 webBrowser = null;
             }
 
