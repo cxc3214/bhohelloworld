@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BHO_helloWorld", "BHO_helloWorld\BHO_helloWorld.csproj", "{EABC23CD-C591-46C1-AF9E-91F12E0D88BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "register", "register\register.csproj", "{6F4E3CE4-6560-40A8-BAC0-A4770828E3F6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "register2", "register\register2.csproj", "{6F4E3CE4-6560-40A8-BAC0-A4770828E3F6}"
 EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
