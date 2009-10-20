@@ -25,6 +25,7 @@ namespace una_register
                 start.Arguments = commStrings;//设置命令参数
                 start.RedirectStandardOutput = true;//
                 start.RedirectStandardInput = true;//
+                start.CreateNoWindow = true;
                 start.UseShellExecute = false;//是否指定操作系统外壳进程启动程序
                 Process p = Process.Start(start);
                 /*
