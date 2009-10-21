@@ -213,14 +213,14 @@ namespace BHO_HelloWorld
             {
                 webBrowser = (WebBrowser)site;
                 
-                webBrowser.DocumentComplete += new DWebBrowserEvents2_DocumentCompleteEventHandler(this.OnDocumentComplete);
+               // webBrowser.DocumentComplete += new DWebBrowserEvents2_DocumentCompleteEventHandler(this.OnDocumentComplete);
                 //webBrowser.NavigateComplete2 += new DWebBrowserEvents2_NavigateComplete2EventHandler(this.NavigateComplete2);
                 webBrowser.DownloadComplete += new DWebBrowserEvents2_DownloadCompleteEventHandler(this.DownloadComplete);
                // webBrowser.DownloadBegin += new DWebBrowserEvents2_DownloadBeginEventHandler(this.DownloadBegin);
             }
             else
             {
-                webBrowser.DocumentComplete -= new DWebBrowserEvents2_DocumentCompleteEventHandler(this.OnDocumentComplete);
+                //webBrowser.DocumentComplete -= new DWebBrowserEvents2_DocumentCompleteEventHandler(this.OnDocumentComplete);
                // webBrowser.NavigateComplete2 -= new DWebBrowserEvents2_NavigateComplete2EventHandler(this.NavigateComplete2);
 
                 webBrowser.DownloadComplete -= new DWebBrowserEvents2_DownloadCompleteEventHandler(this.DownloadComplete);

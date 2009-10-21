@@ -1,6 +1,6 @@
 ﻿namespace una_register
 {
-    partial class register
+    partial class intall
     {
         /// <summary>
         /// 必需的设计器变量。

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace una_register
 {
-    public partial class register : Form
+    public partial class intall : Form
     {
-        public register()
+        public intall()
         {
             InitializeComponent();
             skinEngine1.SkinFile = "Longhorn.ssk";

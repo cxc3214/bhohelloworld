@@ -15,7 +15,7 @@ namespace una_register
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new register());
+            Application.Run(new intall());
         }
     }
 }
