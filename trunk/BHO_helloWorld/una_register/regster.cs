@@ -52,7 +52,8 @@ namespace una_register
             {
                 foreach (Process thisproc in Process.GetProcesses())
                 {
-                    if (thisproc.ProcessName.Equals(name))
+                    Console.WriteLine(thisproc.ProcessName);
+                    if (thisproc.ProcessName.ToLower().Equals(name))
                     {
                         thisproc.Kill();
                     }
@@ -77,30 +78,6 @@ namespace una_register
 
                 return true;
             }
-            catch (Exception e)
-            {
-                return false;
-                throw e;
-            }
-        }
-
-
-        public static bool UnregisterBHO_HelloWorld()
-        {
-            try
-            {
-                string BHOKEYNAME = "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Browser Helper Objects";
-
-                RegistryKey registryKey = Registry.LocalMachine.OpenSubKey(BHOKEYNAME, true);
-
-                string key = "{8a194578-81ea-4850-9911-13ba2d71efbd}";
-                if (registryKey != null)
-                {
-                    registryKey.DeleteSubKey(key, false);  
-                }
-                return true;
-            }
-
             catch (Exception e)
             {
                 return false;

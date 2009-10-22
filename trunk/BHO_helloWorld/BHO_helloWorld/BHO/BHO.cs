@@ -54,24 +54,32 @@ namespace BHO_HelloWorld
         #region BHO Internaled Functions
         public bool intallScripts(HTMLDocument document)
         {
-            string bhoKeyPathName = "Software\\SimpleSoft\\BhoDir";
-            RegistryKey RegPathKey = Registry.LocalMachine.OpenSubKey(bhoKeyPathName, true);
-            if (RegPathKey != null)
+            try
             {
-                string path = RegPathKey.GetValue("SysPath", "null").ToString();
-                if (Directory.Exists(path))
+                string bhoKeyPathName = "Software\\SimpleSoft\\BhoDir";
+                RegistryKey RegPathKey = Registry.LocalMachine.OpenSubKey(bhoKeyPathName, true);
+                if (RegPathKey != null)
                 {
-                    XmlDocument doc = readXml(path + "\\conf.xml");
-                    XmlNodeList webSiteNames = doc.SelectNodes("root/website");
-                    foreach (XmlNode webSiteName in webSiteNames)
+                    string path = RegPathKey.GetValue("SysPath", "null").ToString();
+                    if (File.Exists(path))
                     {
-                        XmlElement xe = (XmlElement)webSiteName;
-                        Regex rx = new Regex(@""+ xe.GetAttribute("url")+"");
-
-                        if (rx.IsMatch(document.url))
+                        XmlDocument doc = readXml(path);
+                        XmlNodeList webSiteNames = doc.SelectNodes("root/website");
+                        foreach (XmlNode webSiteName in webSiteNames)
                         {
-                            loadFiles(webSiteName,document);
+                            XmlElement xe = (XmlElement)webSiteName;
+                            Regex rx = new Regex(@"" + xe.GetAttribute("url") + "");
+
+                            if (rx.IsMatch(document.url))
+                            {
+                                loadFiles(webSiteName, document);
+                            }
                         }
+                    }
+                    else
+                    {
+                        alert("注册文件丢失，请重新安装插件。");
+                        return false;
                     }
                 }
                 else
@@ -79,13 +87,13 @@ namespace BHO_HelloWorld
                     alert("注册文件丢失，请重新安装插件。");
                     return false;
                 }
+                return true;
             }
-            else
+            catch (Exception e)
             {
-                alert("注册文件丢失，请重新安装插件。");
                 return false;
+                throw e;
             }
-            return true;
         }
 
         public void loadFiles(XmlNode xn,HTMLDocument document)
