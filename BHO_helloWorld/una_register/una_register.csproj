@@ -9,9 +9,10 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>una_register</RootNamespace>
-    <AssemblyName>una_register</AssemblyName>
+    <AssemblyName>comReg</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>intall.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -84,6 +85,9 @@
     </Compile>
     <Compile Include="regster.cs" />
     <Compile Include="RWReg.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="intall.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using Microsoft.Win32;
 
-namespace BHO_HelloWorld
+namespace una_register
 {
     /// <summary>
     /// RWReg 的摘要说明。
