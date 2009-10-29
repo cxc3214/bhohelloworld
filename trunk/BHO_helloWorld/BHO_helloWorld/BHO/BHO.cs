@@ -56,6 +56,7 @@ namespace BHO_HelloWorld
         {
             try
             {
+               // alert("KO");   
                 string bhoKeyPathName = "Software\\SimpleSoft\\BhoDir";
                 RegistryKey RegPathKey = Registry.LocalMachine.OpenSubKey(bhoKeyPathName, true);
                 if (RegPathKey != null)
