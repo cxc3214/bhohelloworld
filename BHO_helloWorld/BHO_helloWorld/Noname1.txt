@@ -1,0 +1,61 @@
+新建 NetBHO 解决方案和工程
+
+添加对 COM - Microsoft Internet Controls 的引用	(SHDocVw)
+添加对 GAC - Microsoft.mshtml 的引用	(Microsoft.mshtml)
+添加对 GAC - System.Windows.Forms 的引用 (用于调试)
+
+关闭 vs.net 
+
+运行cmd,cd到项目文件夹下
+执行
+sn -k netbho.snk
+ildasm obj/Interop.SHDocVw.dll /output:obj/shdocvw.il
+ilasm obj/shdocvw.il /dll /key=netbho.snk /resource=obj/shdocvw.res /output=obj/Interop.SHDocVw.dll /quiet
+copy obj/Interop.SHDocVw.dll bin/debug/Interop.SHDocVw.dll
+
+打开 vs.net , 打开工程 , 在 [Configuration Properties]-[Build] 下设置 [Register For COM Interop] 为 True
+(否则dll编译完成后要用Regasm.exe注册dll)
+
+删除对 SHDocVw 的引用。
+添加对 obj/Inetrop.SHDocVw 的引用。
+
+设置工程的属性。
+
+删除Class1.cs
+
+修改AssemblyInfo.cs
+	[assembly: AssemblyVersion("1.0.0.0")]
+	[assembly: AssemblyKeyFile("../../netbho.snk")]
+
+新建oledef.cs
+	添加对 UUID 与 IObjectWithSite 的定义
+
+新建MyBHO.cs
+	新建[Guid("4236C273-F846-4e2c-9B3C-C28D0D310187")]
+	实现 IObjectWithSite
+
+编译项目
+
+新建NetBHO.reg
+内容为
+	Windows Registry Editor Version 5.00
+	[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Browser Helper Objects\{4236C273-F846-4e2c-9B3C-C28D0D310187}]
+	
+执行NetBHO.reg
+
+如果要删除NetBHO.MyBHO的关联，用Regedit删除
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Browser Helper Objects\{4236C273-F846-4e2c-9B3C-C28D0D310187}]
+就OK了。
+
+--------------------------------
+TIPS
+
+编译：
+如果编译时说不能写目标文件，那么可能是程序被IE或Explorer锁定了。
+在重新编译前，请关闭所有的IE和使用WebBrowser的程序。（例如帮助文档）
+被IE锁定还好，把所有的IE关闭就OK了。
+要关闭Explorer，可以按[开始]-[关闭系统]，按住 CTRL+ALT+SHIFT ， 然后点取消。
+当然关闭了Explorer，最好用的工具就是 CTRL+ALT+DEL 后的 任务管理器了。
+所以，尽量不要打开Explorer的窗口。
+
+
