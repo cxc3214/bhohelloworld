@@ -1,0 +1,4 @@
+sn -k bhohelloworld.snk
+ildasm obj/Release/Interop.SHDocVw.dll /output:obj/Release/shdocvw.il
+ilasm obj/Release/shdocvw.il /dll /key=bhohelloworld.snk /resource=obj/Release/shdocvw.res /output=obj/Release/Interop.SHDocVw.dll /quiet
+copy obj/Release/Interop.SHDocVw.dll bin/debug/Interop.SHDocVw.dll

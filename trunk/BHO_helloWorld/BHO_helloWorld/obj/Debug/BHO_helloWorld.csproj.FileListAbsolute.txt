@@ -1,9 +1,9 @@
 E:\.net\BHO\BHO_helloWorld\BHO_helloWorld\bin\Debug\BHO_helloWorld.dll
 E:\.net\BHO\BHO_helloWorld\BHO_helloWorld\bin\Debug\BHO_helloWorld.pdb
-E:\.net\BHO\BHO_helloWorld\BHO_helloWorld\bin\Debug\Interop.SHDocVw.dll
 E:\.net\BHO\BHO_helloWorld\BHO_helloWorld\obj\Debug\ResolveAssemblyReference.cache
 E:\.net\BHO\BHO_helloWorld\BHO_helloWorld\obj\Debug\Interop.SHDocVw.dll
 E:\.net\BHO\BHO_helloWorld\BHO_helloWorld\obj\Debug\BHO_helloWorld.csproj.ResolveComReference.cache
 E:\.net\BHO\BHO_helloWorld\BHO_helloWorld\obj\Debug\BHO_helloWorld.dll
 E:\.net\BHO\BHO_helloWorld\BHO_helloWorld\obj\Debug\BHO_helloWorld.pdb
 E:\.net\BHO\BHO_helloWorld\BHO_helloWorld\bin\Debug\BHO_helloWorld.tlb
+E:\.net\BHO\BHO_helloWorld\BHO_helloWorld\bin\Debug\BHO_helloWorld.XML
