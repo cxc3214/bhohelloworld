@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BHO_helloWorld", "BHO_hello
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "una_register", "una_register\una_register.csproj", "{6ECF3DE4-DD3E-44E3-9334-426AB6B86525}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bho_Test", "bho_Test\bho_Test.csproj", "{35B00BF4-99FC-4BAD-926E-E1A185CD5ECA}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -23,6 +25,10 @@ Global
 		{6ECF3DE4-DD3E-44E3-9334-426AB6B86525}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6ECF3DE4-DD3E-44E3-9334-426AB6B86525}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6ECF3DE4-DD3E-44E3-9334-426AB6B86525}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35B00BF4-99FC-4BAD-926E-E1A185CD5ECA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35B00BF4-99FC-4BAD-926E-E1A185CD5ECA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35B00BF4-99FC-4BAD-926E-E1A185CD5ECA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35B00BF4-99FC-4BAD-926E-E1A185CD5ECA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
