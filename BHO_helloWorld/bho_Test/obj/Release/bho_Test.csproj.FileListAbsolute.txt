@@ -5,3 +5,10 @@ E:\.net\BHO\BHO_helloWorld\bho_Test\bin\Release\Interop.SHDocVw.dll
 E:\.net\BHO\BHO_helloWorld\bho_Test\obj\Release\ResolveAssemblyReference.cache
 E:\.net\BHO\BHO_helloWorld\bho_Test\obj\Release\bho_Test.dll
 E:\.net\BHO\BHO_helloWorld\bho_Test\obj\Release\bho_Test.pdb
+E:\工作\测试库\vs\BHO\BHO_helloWorld\bho_Test\bin\Release\bho_Test.dll
+E:\工作\测试库\vs\BHO\BHO_helloWorld\bho_Test\bin\Release\bho_Test.pdb
+E:\工作\测试库\vs\BHO\BHO_helloWorld\bho_Test\bin\Release\bho_Test.tlb
+E:\工作\测试库\vs\BHO\BHO_helloWorld\bho_Test\bin\Release\Interop.SHDocVw.dll
+E:\工作\测试库\vs\BHO\BHO_helloWorld\bho_Test\obj\Release\ResolveAssemblyReference.cache
+E:\工作\测试库\vs\BHO\BHO_helloWorld\bho_Test\obj\Release\bho_Test.dll
+E:\工作\测试库\vs\BHO\BHO_helloWorld\bho_Test\obj\Release\bho_Test.pdb
