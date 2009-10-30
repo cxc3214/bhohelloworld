@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // 有关程序集的常规信息通过下列属性集
 // 控制。更改这些属性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("BHO_helloWorld")]
+[assembly: AssemblyTitle("bho_Test")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("新博科技")]
-[assembly: AssemblyProduct("BHO_helloWorld")]
-[assembly: AssemblyCopyright("Copyright © 新博科技 2009")]
+[assembly: AssemblyCompany("微软中国")]
+[assembly: AssemblyProduct("bho_Test")]
+[assembly: AssemblyCopyright("Copyright © 微软中国 2009")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("c79f59b3-c416-4ec6-91b6-a036e52499ec")]
+[assembly: Guid("a4e78b5f-64d5-464e-9ea3-a58932671649")]
 
 // 程序集的版本信息由下面四个值组成:
 //
@@ -34,4 +34,3 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-[assembly: AssemblyKeyFile("../../bhohelloworld.snk")]
