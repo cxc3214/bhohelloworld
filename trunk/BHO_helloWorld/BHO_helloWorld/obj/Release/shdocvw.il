@@ -20,25 +20,25 @@
                                                                                                 int32) = ( 01 00 01 00 00 00 01 00 00 00 00 00 ) 
   .publickey = (00 24 00 00 04 80 00 00 94 00 00 00 06 02 00 00   // .$..............
                 00 24 00 00 52 53 41 31 00 04 00 00 01 00 01 00   // .$..RSA1........
-                85 7F 4E 9A 07 8B BC A9 07 FA 03 14 51 1E 81 20   // ..N.........Q.. 
-                7A A9 7D A2 EF BC 6F E4 E5 63 5D 8C 48 8C B3 33   // z.}...o..c].H..3
-                13 09 24 49 C3 83 26 E9 62 97 0E 11 D9 FB 15 23   // ..$I..&.b......#
-                E5 B9 61 7E D3 65 AC 49 81 03 C7 DD 1A FD 0D EF   // ..a~.e.I........
-                A5 0E 0E F4 36 B1 E1 5C 90 09 5A 42 DA 36 79 88   // ....6..\..ZB.6y.
-                AB BB 68 F3 20 76 6D 28 FE 18 0A 42 BD AB 90 F1   // ..h. vm(...B....
-                82 22 33 38 53 1E 44 5E A2 40 CB 8E 14 D5 C6 2B   // ."38S.D^.@.....+
-                D8 7B 6B F4 A9 8E 33 EF 2E 28 16 00 2E B8 B8 9D ) // .{k...3..(......
+                83 E2 87 8D BA AF A4 BE 4C 26 B8 60 86 29 18 19   // ........L&.`.)..
+                5A 1C 69 C2 3F A6 38 7F 58 CC 38 36 70 0B 24 0D   // Z.i.?.8.X.86p.$.
+                FC F9 68 D9 04 D5 68 DA 09 7C 3A BA 55 64 C5 91   // ..h...h..|:.Ud..
+                82 4E 4F 04 F9 35 6D 84 F8 A9 CA 4F 9B 1E 1C BD   // .NO..5m....O....
+                D0 72 95 F8 71 FC D4 E7 B1 B5 30 5A BF EE F1 ED   // .r..q.....0Z....
+                55 E8 DF 10 08 40 7D 39 ED 6A F3 14 81 61 1C 91   // U....@}9.j...a..
+                25 52 A8 F3 70 21 3E CC F1 67 60 56 1B A9 14 CB   // %R..p!>..g`V....
+                19 3D C1 60 96 67 59 FC B8 46 33 2E 00 60 16 D6 ) // .=.`.gY..F3..`..
   .hash algorithm 0x00008004
   .ver 1:1:0:0
 }
 .module SHDocVw.dll
-// MVID: {67402167-8DCD-42C7-82B8-3C56FE166AC7}
+// MVID: {E867803F-D93F-4C17-B0DE-4FB9386CE9E9}
 .imagebase 0x00400000
 .file alignment 0x00001000
 .stackreserve 0x00100000
 .subsystem 0x0003       // WINDOWS_CUI
 .corflags 0x00000009    //  ILONLY
-// Image base: 0x031E0000
+// Image base: 0x03200000
 
 
 // =============== CLASS MEMBERS DECLARATION ===================
@@ -290,11 +290,11 @@
 
 .class interface public abstract auto ansi import SHDocVw.DWebBrowserEvents
 {
+  .custom instance void [mscorlib]System.Runtime.InteropServices.InterfaceTypeAttribute::.ctor(int16) = ( 01 00 02 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 10 10 00 00 ) 
   .custom instance void [mscorlib]System.Runtime.InteropServices.GuidAttribute::.ctor(string) = ( 01 00 24 45 41 42 32 32 41 43 32 2D 33 30 43 31   // ..$EAB22AC2-30C1
                                                                                                   2D 31 31 43 46 2D 41 37 45 42 2D 30 30 30 30 43   // -11CF-A7EB-0000C
                                                                                                   30 35 42 41 45 30 42 00 00 )                      // 05BAE0B..
-  .custom instance void [mscorlib]System.Runtime.InteropServices.InterfaceTypeAttribute::.ctor(int16) = ( 01 00 02 00 00 00 ) 
-  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 10 10 00 00 ) 
   .method public hidebysig newslot abstract virtual 
           instance void  BeforeNavigate([in] string  marshal( bstr) URL,
                                         int32 Flags,
@@ -1609,11 +1609,11 @@
 
 .class interface public abstract auto ansi import SHDocVw.DWebBrowserEvents2
 {
-  .custom instance void [mscorlib]System.Runtime.InteropServices.InterfaceTypeAttribute::.ctor(int16) = ( 01 00 02 00 00 00 ) 
   .custom instance void [mscorlib]System.Runtime.InteropServices.GuidAttribute::.ctor(string) = ( 01 00 24 33 34 41 37 31 35 41 30 2D 36 35 38 37   // ..$34A715A0-6587
                                                                                                   2D 31 31 44 30 2D 39 32 34 41 2D 30 30 32 30 41   // -11D0-924A-0020A
                                                                                                   46 43 37 41 43 34 44 00 00 )                      // FC7AC4D..
   .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 10 10 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.InterfaceTypeAttribute::.ctor(int16) = ( 01 00 02 00 00 00 ) 
   .method public hidebysig newslot abstract virtual 
           instance void  StatusTextChange([in] string  marshal( bstr) Text) runtime managed preservesig internalcall
   {
@@ -1884,15 +1884,15 @@
                   SHDocVw.IWebBrowser2,
                   SHDocVw.DWebBrowserEvents2_Event
 {
+  .custom instance void [mscorlib]System.Runtime.InteropServices.GuidAttribute::.ctor(string) = ( 01 00 24 45 41 42 32 32 41 43 33 2D 33 30 43 31   // ..$EAB22AC3-30C1
+                                                                                                  2D 31 31 43 46 2D 41 37 45 42 2D 30 30 30 30 43   // -11CF-A7EB-0000C
+                                                                                                  30 35 42 41 45 30 42 00 00 )                      // 05BAE0B..
   .custom instance void [mscorlib]System.Runtime.InteropServices.ComSourceInterfacesAttribute::.ctor(string) = ( 01 00 36 53 48 44 6F 63 56 77 2E 44 57 65 62 42   // ..6SHDocVw.DWebB
                                                                                                                  72 6F 77 73 65 72 45 76 65 6E 74 73 00 53 48 44   // rowserEvents.SHD
                                                                                                                  6F 63 56 77 2E 44 57 65 62 42 72 6F 77 73 65 72   // ocVw.DWebBrowser
                                                                                                                  45 76 65 6E 74 73 32 00 00 00 00 )                // Events2....
-  .custom instance void [mscorlib]System.Runtime.InteropServices.ClassInterfaceAttribute::.ctor(int16) = ( 01 00 00 00 00 00 ) 
   .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 22 00 00 00 )                               // .."...
-  .custom instance void [mscorlib]System.Runtime.InteropServices.GuidAttribute::.ctor(string) = ( 01 00 24 45 41 42 32 32 41 43 33 2D 33 30 43 31   // ..$EAB22AC3-30C1
-                                                                                                  2D 31 31 43 46 2D 41 37 45 42 2D 30 30 30 30 43   // -11CF-A7EB-0000C
-                                                                                                  30 35 42 41 45 30 42 00 00 )                      // 05BAE0B..
+  .custom instance void [mscorlib]System.Runtime.InteropServices.ClassInterfaceAttribute::.ctor(int16) = ( 01 00 00 00 00 00 ) 
   .method public specialname rtspecialname 
           instance void  .ctor() runtime managed internalcall
   {
@@ -3945,6 +3945,7 @@
 
 .class interface public abstract auto ansi SHDocVw.DWebBrowserEvents2_Event
 {
+  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 10 00 00 00 ) 
   .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
   .custom instance void [mscorlib]System.Runtime.InteropServices.ComEventInterfaceAttribute::.ctor(class [mscorlib]System.Type,
                                                                                                    class [mscorlib]System.Type) = ( 01 00 1B 53 48 44 6F 63 56 77 2E 44 57 65 62 42   // ...SHDocVw.DWebB
@@ -3952,7 +3953,6 @@
                                                                                                                                     48 44 6F 63 56 77 2E 44 57 65 62 42 72 6F 77 73   // HDocVw.DWebBrows
                                                                                                                                     65 72 45 76 65 6E 74 73 32 5F 45 76 65 6E 74 50   // erEvents2_EventP
                                                                                                                                     72 6F 76 69 64 65 72 00 00 00 )                   // rovider...
-  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 10 00 00 00 ) 
   .method public hidebysig newslot abstract virtual 
           instance void  add_StatusTextChange(class SHDocVw.DWebBrowserEvents2_StatusTextChangeEventHandler A_1) runtime managed internalcall
   {
@@ -4550,8 +4550,8 @@
 .class public auto ansi sealed SHDocVw.DWebBrowserEvents_NavigateCompleteEventHandler
        extends [mscorlib]System.MulticastDelegate
 {
-  .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
   .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 10 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
   .method public specialname rtspecialname 
           instance void  .ctor(object A_1,
                                native uint A_2) runtime managed
@@ -4567,8 +4567,8 @@
 .class public auto ansi sealed SHDocVw.DWebBrowserEvents_StatusTextChangeEventHandler
        extends [mscorlib]System.MulticastDelegate
 {
-  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 10 00 00 00 ) 
   .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 10 00 00 00 ) 
   .method public specialname rtspecialname 
           instance void  .ctor(object A_1,
                                native uint A_2) runtime managed
@@ -4676,8 +4676,8 @@
 .class public auto ansi sealed SHDocVw.DWebBrowserEvents_TitleChangeEventHandler
        extends [mscorlib]System.MulticastDelegate
 {
-  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 10 00 00 00 ) 
   .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 10 00 00 00 ) 
   .method public specialname rtspecialname 
           instance void  .ctor(object A_1,
                                native uint A_2) runtime managed
@@ -4693,8 +4693,8 @@
 .class public auto ansi sealed SHDocVw.DWebBrowserEvents_FrameBeforeNavigateEventHandler
        extends [mscorlib]System.MulticastDelegate
 {
-  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 10 00 00 00 ) 
   .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 10 00 00 00 ) 
   .method public specialname rtspecialname 
           instance void  .ctor(object A_1,
                                native uint A_2) runtime managed
@@ -4732,8 +4732,8 @@
 .class public auto ansi sealed SHDocVw.DWebBrowserEvents_FrameNewWindowEventHandler
        extends [mscorlib]System.MulticastDelegate
 {
-  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 10 00 00 00 ) 
   .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 10 00 00 00 ) 
   .method public specialname rtspecialname 
           instance void  .ctor(object A_1,
                                native uint A_2) runtime managed
@@ -4754,8 +4754,8 @@
 .class public auto ansi sealed SHDocVw.DWebBrowserEvents_QuitEventHandler
        extends [mscorlib]System.MulticastDelegate
 {
-  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 10 00 00 00 ) 
   .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 10 00 00 00 ) 
   .method public specialname rtspecialname 
           instance void  .ctor(object A_1,
                                native uint A_2) runtime managed
@@ -4788,8 +4788,8 @@
 .class public auto ansi sealed SHDocVw.DWebBrowserEvents_WindowResizeEventHandler
        extends [mscorlib]System.MulticastDelegate
 {
-  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 10 00 00 00 ) 
   .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 10 00 00 00 ) 
   .method public specialname rtspecialname 
           instance void  .ctor(object A_1,
                                native uint A_2) runtime managed
@@ -4839,8 +4839,8 @@
 .class public auto ansi sealed SHDocVw.DWebBrowserEvents2_StatusTextChangeEventHandler
        extends [mscorlib]System.MulticastDelegate
 {
-  .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
   .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 10 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
   .method public specialname rtspecialname 
           instance void  .ctor(object A_1,
                                native uint A_2) runtime managed
@@ -4943,8 +4943,8 @@
 .class public auto ansi sealed SHDocVw.DWebBrowserEvents2_PropertyChangeEventHandler
        extends [mscorlib]System.MulticastDelegate
 {
-  .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
   .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 10 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
   .method public specialname rtspecialname 
           instance void  .ctor(object A_1,
                                native uint A_2) runtime managed
@@ -4960,8 +4960,8 @@
 .class public auto ansi sealed SHDocVw.DWebBrowserEvents2_BeforeNavigate2EventHandler
        extends [mscorlib]System.MulticastDelegate
 {
-  .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
   .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 10 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
   .method public specialname rtspecialname 
           instance void  .ctor(object A_1,
                                native uint A_2) runtime managed
@@ -5054,8 +5054,8 @@
 .class public auto ansi sealed SHDocVw.DWebBrowserEvents2_OnVisibleEventHandler
        extends [mscorlib]System.MulticastDelegate
 {
-  .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
   .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 10 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
   .method public specialname rtspecialname 
           instance void  .ctor(object A_1,
                                native uint A_2) runtime managed
@@ -5496,8 +5496,8 @@
 .class public auto ansi sealed SHDocVw.DWebBrowserEvents2_RedirectXDomainBlockedEventHandler
        extends [mscorlib]System.MulticastDelegate
 {
-  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 10 00 00 00 ) 
   .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 10 00 00 00 ) 
   .method public specialname rtspecialname 
           instance void  .ctor(object A_1,
                                native uint A_2) runtime managed
@@ -5522,16 +5522,16 @@
                   SHDocVw.IWebBrowser,
                   SHDocVw.DWebBrowserEvents_Event
 {
-  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 22 00 00 00 )                               // .."...
-  .custom instance void [mscorlib]System.Reflection.DefaultMemberAttribute::.ctor(string) = ( 01 00 04 4E 61 6D 65 00 00 )                      // ...Name..
   .custom instance void [mscorlib]System.Runtime.InteropServices.GuidAttribute::.ctor(string) = ( 01 00 24 38 38 35 36 46 39 36 31 2D 33 34 30 41   // ..$8856F961-340A
                                                                                                   2D 31 31 44 30 2D 41 39 36 42 2D 30 30 43 30 34   // -11D0-A96B-00C04
                                                                                                   46 44 37 30 35 41 32 00 00 )                      // FD705A2..
-  .custom instance void [mscorlib]System.Runtime.InteropServices.ClassInterfaceAttribute::.ctor(int16) = ( 01 00 00 00 00 00 ) 
   .custom instance void [mscorlib]System.Runtime.InteropServices.ComSourceInterfacesAttribute::.ctor(string) = ( 01 00 36 53 48 44 6F 63 56 77 2E 44 57 65 62 42   // ..6SHDocVw.DWebB
                                                                                                                  72 6F 77 73 65 72 45 76 65 6E 74 73 32 00 53 48   // rowserEvents2.SH
                                                                                                                  44 6F 63 56 77 2E 44 57 65 62 42 72 6F 77 73 65   // DocVw.DWebBrowse
                                                                                                                  72 45 76 65 6E 74 73 00 00 00 00 )                // rEvents....
+  .custom instance void [mscorlib]System.Reflection.DefaultMemberAttribute::.ctor(string) = ( 01 00 04 4E 61 6D 65 00 00 )                      // ...Name..
+  .custom instance void [mscorlib]System.Runtime.InteropServices.ClassInterfaceAttribute::.ctor(int16) = ( 01 00 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 22 00 00 00 )                               // .."...
   .method public specialname rtspecialname 
           instance void  .ctor() runtime managed internalcall
   {
@@ -5924,8 +5924,8 @@
           instance valuetype SHDocVw.tagREADYSTATE 
           get_ReadyState() runtime managed internalcall
   {
-    .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibFuncAttribute::.ctor(int16) = ( 01 00 04 00 00 00 ) 
     .custom instance void [mscorlib]System.Runtime.InteropServices.DispIdAttribute::.ctor(int32) = ( 01 00 F3 FD FF FF 00 00 ) 
+    .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibFuncAttribute::.ctor(int16) = ( 01 00 04 00 00 00 ) 
     .override SHDocVw.IWebBrowser2::get_ReadyState
   } // end of method WebBrowserClass::get_ReadyState
 
@@ -7380,13 +7380,13 @@
                   SHDocVw.IWebBrowserApp,
                   SHDocVw.DWebBrowserEvents_Event
 {
-  .custom instance void [mscorlib]System.Reflection.DefaultMemberAttribute::.ctor(string) = ( 01 00 04 4E 61 6D 65 00 00 )                      // ...Name..
   .custom instance void [mscorlib]System.Runtime.InteropServices.ClassInterfaceAttribute::.ctor(int16) = ( 01 00 00 00 00 00 ) 
   .custom instance void [mscorlib]System.Runtime.InteropServices.ComSourceInterfacesAttribute::.ctor(string) = ( 01 00 36 53 48 44 6F 63 56 77 2E 44 57 65 62 42   // ..6SHDocVw.DWebB
                                                                                                                  72 6F 77 73 65 72 45 76 65 6E 74 73 32 00 53 48   // rowserEvents2.SH
                                                                                                                  44 6F 63 56 77 2E 44 57 65 62 42 72 6F 77 73 65   // DocVw.DWebBrowse
                                                                                                                  72 45 76 65 6E 74 73 00 00 00 00 )                // rEvents....
   .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 02 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.DefaultMemberAttribute::.ctor(string) = ( 01 00 04 4E 61 6D 65 00 00 )                      // ...Name..
   .custom instance void [mscorlib]System.Runtime.InteropServices.GuidAttribute::.ctor(string) = ( 01 00 24 30 30 30 32 44 46 30 31 2D 30 30 30 30   // ..$0002DF01-0000
                                                                                                   2D 30 30 30 30 2D 43 30 30 30 2D 30 30 30 30 30   // -0000-C000-00000
                                                                                                   30 30 30 30 30 34 36 00 00 )                      // 0000046..
@@ -7782,8 +7782,8 @@
           instance valuetype SHDocVw.tagREADYSTATE 
           get_ReadyState() runtime managed internalcall
   {
-    .custom instance void [mscorlib]System.Runtime.InteropServices.DispIdAttribute::.ctor(int32) = ( 01 00 F3 FD FF FF 00 00 ) 
     .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibFuncAttribute::.ctor(int16) = ( 01 00 04 00 00 00 ) 
+    .custom instance void [mscorlib]System.Runtime.InteropServices.DispIdAttribute::.ctor(int32) = ( 01 00 F3 FD FF FF 00 00 ) 
     .override SHDocVw.IWebBrowser2::get_ReadyState
   } // end of method InternetExplorerClass::get_ReadyState
 
@@ -9401,12 +9401,12 @@
        implements SHDocVw.IWebBrowser2,
                   SHDocVw.DWebBrowserEvents2_Event
 {
-  .custom instance void [mscorlib]System.Runtime.InteropServices.CoClassAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 1D 53 48 44 6F 63 56 77 2E 49 6E 74 65 72   // ...SHDocVw.Inter
-                                                                                                                          6E 65 74 45 78 70 6C 6F 72 65 72 43 6C 61 73 73   // netExplorerClass
-                                                                                                                          00 00 ) 
   .custom instance void [mscorlib]System.Runtime.InteropServices.GuidAttribute::.ctor(string) = ( 01 00 24 44 33 30 43 31 36 36 31 2D 43 44 41 46   // ..$D30C1661-CDAF
                                                                                                   2D 31 31 44 30 2D 38 41 33 45 2D 30 30 43 30 34   // -11D0-8A3E-00C04
                                                                                                   46 43 39 45 32 36 45 00 00 )                      // FC9E26E..
+  .custom instance void [mscorlib]System.Runtime.InteropServices.CoClassAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 1D 53 48 44 6F 63 56 77 2E 49 6E 74 65 72   // ...SHDocVw.Inter
+                                                                                                                          6E 65 74 45 78 70 6C 6F 72 65 72 43 6C 61 73 73   // netExplorerClass
+                                                                                                                          00 00 ) 
 } // end of class SHDocVw.InternetExplorer
 
 .class public auto ansi import SHDocVw.InternetExplorerMediumClass
@@ -9417,16 +9417,16 @@
                   SHDocVw.IWebBrowserApp,
                   SHDocVw.DWebBrowserEvents_Event
 {
-  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 02 00 00 00 ) 
-  .custom instance void [mscorlib]System.Runtime.InteropServices.GuidAttribute::.ctor(string) = ( 01 00 24 44 35 45 38 30 34 31 44 2D 39 32 30 46   // ..$D5E8041D-920F
-                                                                                                  2D 34 35 45 39 2D 42 38 46 42 2D 42 31 44 45 42   // -45E9-B8FB-B1DEB
-                                                                                                  38 32 43 36 45 35 45 00 00 )                      // 82C6E5E..
+  .custom instance void [mscorlib]System.Runtime.InteropServices.ClassInterfaceAttribute::.ctor(int16) = ( 01 00 00 00 00 00 ) 
   .custom instance void [mscorlib]System.Runtime.InteropServices.ComSourceInterfacesAttribute::.ctor(string) = ( 01 00 36 53 48 44 6F 63 56 77 2E 44 57 65 62 42   // ..6SHDocVw.DWebB
                                                                                                                  72 6F 77 73 65 72 45 76 65 6E 74 73 32 00 53 48   // rowserEvents2.SH
                                                                                                                  44 6F 63 56 77 2E 44 57 65 62 42 72 6F 77 73 65   // DocVw.DWebBrowse
                                                                                                                  72 45 76 65 6E 74 73 00 00 00 00 )                // rEvents....
-  .custom instance void [mscorlib]System.Runtime.InteropServices.ClassInterfaceAttribute::.ctor(int16) = ( 01 00 00 00 00 00 ) 
   .custom instance void [mscorlib]System.Reflection.DefaultMemberAttribute::.ctor(string) = ( 01 00 04 4E 61 6D 65 00 00 )                      // ...Name..
+  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 02 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.GuidAttribute::.ctor(string) = ( 01 00 24 44 35 45 38 30 34 31 44 2D 39 32 30 46   // ..$D5E8041D-920F
+                                                                                                  2D 34 35 45 39 2D 42 38 46 42 2D 42 31 44 45 42   // -45E9-B8FB-B1DEB
+                                                                                                  38 32 43 36 45 35 45 00 00 )                      // 82C6E5E..
   .method public specialname rtspecialname 
           instance void  .ctor() runtime managed internalcall
   {
@@ -11454,8 +11454,6 @@
                   SHDocVw.IWebBrowserApp,
                   SHDocVw.DWebBrowserEvents_Event
 {
-  .custom instance void [mscorlib]System.Runtime.InteropServices.ClassInterfaceAttribute::.ctor(int16) = ( 01 00 00 00 00 00 ) 
-  .custom instance void [mscorlib]System.Reflection.DefaultMemberAttribute::.ctor(string) = ( 01 00 04 4E 61 6D 65 00 00 )                      // ...Name..
   .custom instance void [mscorlib]System.Runtime.InteropServices.GuidAttribute::.ctor(string) = ( 01 00 24 43 30 38 41 46 44 39 30 2D 46 32 41 31   // ..$C08AFD90-F2A1
                                                                                                   2D 31 31 44 31 2D 38 34 35 35 2D 30 30 41 30 43   // -11D1-8455-00A0C
                                                                                                   39 31 46 33 38 38 30 00 00 )                      // 91F3880..
@@ -11464,6 +11462,8 @@
                                                                                                                  44 6F 63 56 77 2E 44 57 65 62 42 72 6F 77 73 65   // DocVw.DWebBrowse
                                                                                                                  72 45 76 65 6E 74 73 00 00 00 00 )                // rEvents....
   .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 10 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.DefaultMemberAttribute::.ctor(string) = ( 01 00 04 4E 61 6D 65 00 00 )                      // ...Name..
+  .custom instance void [mscorlib]System.Runtime.InteropServices.ClassInterfaceAttribute::.ctor(int16) = ( 01 00 00 00 00 00 ) 
   .method assembly specialname rtspecialname 
           instance void  .ctor() runtime managed internalcall
   {
@@ -11856,8 +11856,8 @@
           instance valuetype SHDocVw.tagREADYSTATE 
           get_ReadyState() runtime managed internalcall
   {
-    .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibFuncAttribute::.ctor(int16) = ( 01 00 04 00 00 00 ) 
     .custom instance void [mscorlib]System.Runtime.InteropServices.DispIdAttribute::.ctor(int32) = ( 01 00 F3 FD FF FF 00 00 ) 
+    .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibFuncAttribute::.ctor(int16) = ( 01 00 04 00 00 00 ) 
     .override SHDocVw.IWebBrowser2::get_ReadyState
   } // end of method ShellBrowserWindowClass::get_ReadyState
 
@@ -13500,10 +13500,10 @@
 .class public auto ansi sealed SHDocVw.ShellWindowFindWindowOptions
        extends [mscorlib]System.Enum
 {
-  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 10 00 00 00 ) 
   .custom instance void [mscorlib]System.Runtime.InteropServices.GuidAttribute::.ctor(string) = ( 01 00 24 37 37 31 36 41 33 37 30 2D 33 38 43 41   // ..$7716A370-38CA
                                                                                                   2D 31 31 44 30 2D 41 34 38 42 2D 30 30 41 30 43   // -11D0-A48B-00A0C
                                                                                                   39 30 41 38 46 33 39 00 00 )                      // 90A8F39..
+  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 10 00 00 00 ) 
   .field public specialname rtspecialname int32 value__
   .field public static literal valuetype SHDocVw.ShellWindowFindWindowOptions SWFO_NEEDDISPATCH = int32(0x00000001)
   .field public static literal valuetype SHDocVw.ShellWindowFindWindowOptions SWFO_INCLUDEPENDING = int32(0x00000002)
@@ -13512,11 +13512,11 @@
 
 .class interface public abstract auto ansi import SHDocVw.DShellWindowsEvents
 {
-  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 00 10 00 00 ) 
   .custom instance void [mscorlib]System.Runtime.InteropServices.InterfaceTypeAttribute::.ctor(int16) = ( 01 00 02 00 00 00 ) 
   .custom instance void [mscorlib]System.Runtime.InteropServices.GuidAttribute::.ctor(string) = ( 01 00 24 46 45 34 31 30 36 45 30 2D 33 39 39 41   // ..$FE4106E0-399A
                                                                                                   2D 31 31 44 30 2D 41 34 38 43 2D 30 30 41 30 43   // -11D0-A48C-00A0C
                                                                                                   39 30 41 38 46 33 39 00 00 )                      // 90A8F39..
+  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 00 10 00 00 ) 
   .method public hidebysig newslot abstract virtual 
           instance void  WindowRegistered([in] int32 lCookie) runtime managed preservesig internalcall
   {
@@ -13567,8 +13567,8 @@
                                   [in] int32 swClass,
                                   [out] int32& plCookie) runtime managed internalcall
   {
-    .custom instance void [mscorlib]System.Runtime.InteropServices.DispIdAttribute::.ctor(int32) = ( 01 00 03 00 02 60 00 00 )                         // .....`..
     .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibFuncAttribute::.ctor(int16) = ( 01 00 40 00 00 00 )                               // ..@...
+    .custom instance void [mscorlib]System.Runtime.InteropServices.DispIdAttribute::.ctor(int32) = ( 01 00 03 00 02 60 00 00 )                         // .....`..
   } // end of method IShellWindows::Register
 
   .method public hidebysig newslot abstract virtual 
@@ -13585,24 +13585,24 @@
   .method public hidebysig newslot abstract virtual 
           instance void  Revoke([in] int32 lCookie) runtime managed internalcall
   {
-    .custom instance void [mscorlib]System.Runtime.InteropServices.DispIdAttribute::.ctor(int32) = ( 01 00 05 00 02 60 00 00 )                         // .....`..
     .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibFuncAttribute::.ctor(int16) = ( 01 00 40 00 00 00 )                               // ..@...
+    .custom instance void [mscorlib]System.Runtime.InteropServices.DispIdAttribute::.ctor(int32) = ( 01 00 05 00 02 60 00 00 )                         // .....`..
   } // end of method IShellWindows::Revoke
 
   .method public hidebysig newslot abstract virtual 
           instance void  OnNavigate([in] int32 lCookie,
                                     [in] object&  marshal( struct) pvarloc) runtime managed internalcall
   {
-    .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibFuncAttribute::.ctor(int16) = ( 01 00 40 00 00 00 )                               // ..@...
     .custom instance void [mscorlib]System.Runtime.InteropServices.DispIdAttribute::.ctor(int32) = ( 01 00 06 00 02 60 00 00 )                         // .....`..
+    .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibFuncAttribute::.ctor(int16) = ( 01 00 40 00 00 00 )                               // ..@...
   } // end of method IShellWindows::OnNavigate
 
   .method public hidebysig newslot abstract virtual 
           instance void  OnActivated([in] int32 lCookie,
                                      [in] bool fActive) runtime managed internalcall
   {
-    .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibFuncAttribute::.ctor(int16) = ( 01 00 40 00 00 00 )                               // ..@...
     .custom instance void [mscorlib]System.Runtime.InteropServices.DispIdAttribute::.ctor(int32) = ( 01 00 07 00 02 60 00 00 )                         // .....`..
+    .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibFuncAttribute::.ctor(int16) = ( 01 00 40 00 00 00 )                               // ..@...
   } // end of method IShellWindows::OnActivated
 
   .method public hidebysig newslot abstract virtual 
@@ -13622,8 +13622,8 @@
           instance void  OnCreated([in] int32 lCookie,
                                    [in] object  marshal( iunknown ) punk) runtime managed internalcall
   {
-    .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibFuncAttribute::.ctor(int16) = ( 01 00 40 00 00 00 )                               // ..@...
     .custom instance void [mscorlib]System.Runtime.InteropServices.DispIdAttribute::.ctor(int32) = ( 01 00 09 00 02 60 00 00 )                         // .....`..
+    .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibFuncAttribute::.ctor(int16) = ( 01 00 40 00 00 00 )                               // ..@...
   } // end of method IShellWindows::OnCreated
 
   .method public hidebysig newslot abstract virtual 
@@ -13647,15 +13647,15 @@
                   SHDocVw.DShellWindowsEvents_Event,
                   [mscorlib]System.Collections.IEnumerable
 {
-  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 02 00 00 00 ) 
   .custom instance void [mscorlib]System.Runtime.InteropServices.GuidAttribute::.ctor(string) = ( 01 00 24 39 42 41 30 35 39 37 32 2D 46 36 41 38   // ..$9BA05972-F6A8
                                                                                                   2D 31 31 43 46 2D 41 34 34 32 2D 30 30 41 30 43   // -11CF-A442-00A0C
                                                                                                   39 30 41 38 46 33 39 00 00 )                      // 90A8F39..
+  .custom instance void [mscorlib]System.Runtime.InteropServices.ClassInterfaceAttribute::.ctor(int16) = ( 01 00 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 02 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.DefaultMemberAttribute::.ctor(string) = ( 01 00 04 49 74 65 6D 00 00 )                      // ...Item..
   .custom instance void [mscorlib]System.Runtime.InteropServices.ComSourceInterfacesAttribute::.ctor(string) = ( 01 00 1D 53 48 44 6F 63 56 77 2E 44 53 68 65 6C   // ...SHDocVw.DShel
                                                                                                                  6C 57 69 6E 64 6F 77 73 45 76 65 6E 74 73 00 00   // lWindowsEvents..
                                                                                                                  00 00 ) 
-  .custom instance void [mscorlib]System.Runtime.InteropServices.ClassInterfaceAttribute::.ctor(int16) = ( 01 00 00 00 00 00 ) 
-  .custom instance void [mscorlib]System.Reflection.DefaultMemberAttribute::.ctor(string) = ( 01 00 04 49 74 65 6D 00 00 )                      // ...Item..
   .method public specialname rtspecialname 
           instance void  .ctor() runtime managed internalcall
   {
@@ -13704,16 +13704,16 @@
                                          [in] int32 swClass,
                                          [out] int32& plCookie) runtime managed internalcall
   {
-    .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibFuncAttribute::.ctor(int16) = ( 01 00 40 00 00 00 )                               // ..@...
     .custom instance void [mscorlib]System.Runtime.InteropServices.DispIdAttribute::.ctor(int32) = ( 01 00 04 00 02 60 00 00 )                         // .....`..
+    .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibFuncAttribute::.ctor(int16) = ( 01 00 40 00 00 00 )                               // ..@...
     .override SHDocVw.IShellWindows::RegisterPending
   } // end of method ShellWindowsClass::RegisterPending
 
   .method public hidebysig newslot virtual 
           instance void  Revoke([in] int32 lCookie) runtime managed internalcall
   {
-    .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibFuncAttribute::.ctor(int16) = ( 01 00 40 00 00 00 )                               // ..@...
     .custom instance void [mscorlib]System.Runtime.InteropServices.DispIdAttribute::.ctor(int32) = ( 01 00 05 00 02 60 00 00 )                         // .....`..
+    .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibFuncAttribute::.ctor(int16) = ( 01 00 40 00 00 00 )                               // ..@...
     .override SHDocVw.IShellWindows::Revoke
   } // end of method ShellWindowsClass::Revoke
 
@@ -13721,8 +13721,8 @@
           instance void  OnNavigate([in] int32 lCookie,
                                     [in] object&  marshal( struct) pvarloc) runtime managed internalcall
   {
-    .custom instance void [mscorlib]System.Runtime.InteropServices.DispIdAttribute::.ctor(int32) = ( 01 00 06 00 02 60 00 00 )                         // .....`..
     .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibFuncAttribute::.ctor(int16) = ( 01 00 40 00 00 00 )                               // ..@...
+    .custom instance void [mscorlib]System.Runtime.InteropServices.DispIdAttribute::.ctor(int32) = ( 01 00 06 00 02 60 00 00 )                         // .....`..
     .override SHDocVw.IShellWindows::OnNavigate
   } // end of method ShellWindowsClass::OnNavigate
 
@@ -13753,8 +13753,8 @@
           instance void  OnCreated([in] int32 lCookie,
                                    [in] object  marshal( iunknown ) punk) runtime managed internalcall
   {
-    .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibFuncAttribute::.ctor(int16) = ( 01 00 40 00 00 00 )                               // ..@...
     .custom instance void [mscorlib]System.Runtime.InteropServices.DispIdAttribute::.ctor(int32) = ( 01 00 09 00 02 60 00 00 )                         // .....`..
+    .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibFuncAttribute::.ctor(int16) = ( 01 00 40 00 00 00 )                               // ..@...
     .override SHDocVw.IShellWindows::OnCreated
   } // end of method ShellWindowsClass::OnCreated
 
@@ -13820,13 +13820,13 @@
 
 .class interface public abstract auto ansi SHDocVw.DShellWindowsEvents_Event
 {
-  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 10 00 00 00 ) 
   .custom instance void [mscorlib]System.Runtime.InteropServices.ComEventInterfaceAttribute::.ctor(class [mscorlib]System.Type,
                                                                                                    class [mscorlib]System.Type) = ( 01 00 1C 53 48 44 6F 63 56 77 2E 44 53 68 65 6C   // ...SHDocVw.DShel
                                                                                                                                     6C 57 69 6E 64 6F 77 73 45 76 65 6E 74 73 00 2A   // lWindowsEvents.*
                                                                                                                                     53 48 44 6F 63 56 77 2E 44 53 68 65 6C 6C 57 69   // SHDocVw.DShellWi
                                                                                                                                     6E 64 6F 77 73 45 76 65 6E 74 73 5F 45 76 65 6E   // ndowsEvents_Even
                                                                                                                                     74 50 72 6F 76 69 64 65 72 00 00 00 )             // tProvider...
+  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 10 00 00 00 ) 
   .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
   .method public hidebysig newslot abstract virtual 
           instance void  add_WindowRegistered(class SHDocVw.DShellWindowsEvents_WindowRegisteredEventHandler A_1) runtime managed internalcall
@@ -13903,22 +13903,22 @@
   .method public hidebysig newslot abstract virtual 
           instance void  ResetFirstBootMode() runtime managed internalcall
   {
-    .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibFuncAttribute::.ctor(int16) = ( 01 00 40 00 00 00 )                               // ..@...
     .custom instance void [mscorlib]System.Runtime.InteropServices.DispIdAttribute::.ctor(int32) = ( 01 00 01 00 00 00 00 00 ) 
+    .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibFuncAttribute::.ctor(int16) = ( 01 00 40 00 00 00 )                               // ..@...
   } // end of method IShellUIHelper::ResetFirstBootMode
 
   .method public hidebysig newslot abstract virtual 
           instance void  ResetSafeMode() runtime managed internalcall
   {
-    .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibFuncAttribute::.ctor(int16) = ( 01 00 40 00 00 00 )                               // ..@...
     .custom instance void [mscorlib]System.Runtime.InteropServices.DispIdAttribute::.ctor(int32) = ( 01 00 02 00 00 00 00 00 ) 
+    .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibFuncAttribute::.ctor(int16) = ( 01 00 40 00 00 00 )                               // ..@...
   } // end of method IShellUIHelper::ResetSafeMode
 
   .method public hidebysig newslot abstract virtual 
           instance void  RefreshOfflineDesktop() runtime managed internalcall
   {
-    .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibFuncAttribute::.ctor(int16) = ( 01 00 40 00 00 00 )                               // ..@...
     .custom instance void [mscorlib]System.Runtime.InteropServices.DispIdAttribute::.ctor(int32) = ( 01 00 03 00 00 00 00 00 ) 
+    .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibFuncAttribute::.ctor(int16) = ( 01 00 40 00 00 00 )                               // ..@...
   } // end of method IShellUIHelper::RefreshOfflineDesktop
 
   .method public hidebysig newslot abstract virtual 
@@ -14001,10 +14001,10 @@
 .class interface public abstract auto ansi import SHDocVw.IShellUIHelper2
        implements SHDocVw.IShellUIHelper
 {
+  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 40 10 00 00 )                               // ..@...
   .custom instance void [mscorlib]System.Runtime.InteropServices.GuidAttribute::.ctor(string) = ( 01 00 24 41 37 46 45 36 45 44 41 2D 31 39 33 32   // ..$A7FE6EDA-1932
                                                                                                   2D 34 32 38 31 2D 42 38 38 31 2D 38 37 42 33 31   // -4281-B881-87B31
                                                                                                   42 38 42 43 35 32 43 00 00 )                      // B8BC52C..
-  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 40 10 00 00 )                               // ..@...
   .method public hidebysig newslot abstract virtual 
           instance void  ResetFirstBootMode() runtime managed internalcall
   {
@@ -14015,8 +14015,8 @@
   .method public hidebysig newslot abstract virtual 
           instance void  ResetSafeMode() runtime managed internalcall
   {
-    .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibFuncAttribute::.ctor(int16) = ( 01 00 40 00 00 00 )                               // ..@...
     .custom instance void [mscorlib]System.Runtime.InteropServices.DispIdAttribute::.ctor(int32) = ( 01 00 02 00 00 00 00 00 ) 
+    .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibFuncAttribute::.ctor(int16) = ( 01 00 40 00 00 00 )                               // ..@...
   } // end of method IShellUIHelper2::ResetSafeMode
 
   .method public hidebysig newslot abstract virtual 
@@ -14210,15 +14210,15 @@
 .class interface public abstract auto ansi import SHDocVw.IShellUIHelper3
        implements SHDocVw.IShellUIHelper2
 {
+  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 40 10 00 00 )                               // ..@...
   .custom instance void [mscorlib]System.Runtime.InteropServices.GuidAttribute::.ctor(string) = ( 01 00 24 35 32 38 44 46 32 45 43 2D 44 34 31 39   // ..$528DF2EC-D419
                                                                                                   2D 34 30 42 43 2D 39 42 36 44 2D 44 43 44 42 46   // -40BC-9B6D-DCDBF
                                                                                                   39 43 31 42 32 35 44 00 00 )                      // 9C1B25D..
-  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 40 10 00 00 )                               // ..@...
   .method public hidebysig newslot abstract virtual 
           instance void  ResetFirstBootMode() runtime managed internalcall
   {
-    .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibFuncAttribute::.ctor(int16) = ( 01 00 40 00 00 00 )                               // ..@...
     .custom instance void [mscorlib]System.Runtime.InteropServices.DispIdAttribute::.ctor(int32) = ( 01 00 01 00 00 00 00 00 ) 
+    .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibFuncAttribute::.ctor(int16) = ( 01 00 40 00 00 00 )                               // ..@...
   } // end of method IShellUIHelper3::ResetFirstBootMode
 
   .method public hidebysig newslot abstract virtual 
@@ -14231,8 +14231,8 @@
   .method public hidebysig newslot abstract virtual 
           instance void  RefreshOfflineDesktop() runtime managed internalcall
   {
-    .custom instance void [mscorlib]System.Runtime.InteropServices.DispIdAttribute::.ctor(int32) = ( 01 00 03 00 00 00 00 00 ) 
     .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibFuncAttribute::.ctor(int16) = ( 01 00 40 00 00 00 )                               // ..@...
+    .custom instance void [mscorlib]System.Runtime.InteropServices.DispIdAttribute::.ctor(int32) = ( 01 00 03 00 00 00 00 00 ) 
   } // end of method IShellUIHelper3::RefreshOfflineDesktop
 
   .method public hidebysig newslot abstract virtual 
@@ -14502,11 +14502,11 @@
        implements SHDocVw.IShellUIHelper3,
                   SHDocVw.ShellUIHelper
 {
-  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 02 00 00 00 ) 
   .custom instance void [mscorlib]System.Runtime.InteropServices.ClassInterfaceAttribute::.ctor(int16) = ( 01 00 00 00 00 00 ) 
   .custom instance void [mscorlib]System.Runtime.InteropServices.GuidAttribute::.ctor(string) = ( 01 00 24 36 34 41 42 34 42 42 37 2D 31 31 31 45   // ..$64AB4BB7-111E
                                                                                                   2D 31 31 44 31 2D 38 46 37 39 2D 30 30 43 30 34   // -11D1-8F79-00C04
                                                                                                   46 43 32 46 42 45 31 00 00 )                      // FC2FBE1..
+  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 02 00 00 00 ) 
   .method public specialname rtspecialname 
           instance void  .ctor() runtime managed internalcall
   {
@@ -14515,8 +14515,8 @@
   .method public hidebysig newslot virtual 
           instance void  ResetFirstBootMode() runtime managed internalcall
   {
-    .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibFuncAttribute::.ctor(int16) = ( 01 00 40 00 00 00 )                               // ..@...
     .custom instance void [mscorlib]System.Runtime.InteropServices.DispIdAttribute::.ctor(int32) = ( 01 00 01 00 00 00 00 00 ) 
+    .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibFuncAttribute::.ctor(int16) = ( 01 00 40 00 00 00 )                               // ..@...
     .override SHDocVw.IShellUIHelper3::ResetFirstBootMode
   } // end of method ShellUIHelperClass::ResetFirstBootMode
 
@@ -14531,8 +14531,8 @@
   .method public hidebysig newslot virtual 
           instance void  RefreshOfflineDesktop() runtime managed internalcall
   {
-    .custom instance void [mscorlib]System.Runtime.InteropServices.DispIdAttribute::.ctor(int32) = ( 01 00 03 00 00 00 00 00 ) 
     .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibFuncAttribute::.ctor(int16) = ( 01 00 40 00 00 00 )                               // ..@...
+    .custom instance void [mscorlib]System.Runtime.InteropServices.DispIdAttribute::.ctor(int32) = ( 01 00 03 00 00 00 00 00 ) 
     .override SHDocVw.IShellUIHelper3::RefreshOfflineDesktop
   } // end of method ShellUIHelperClass::RefreshOfflineDesktop
 
@@ -14606,8 +14606,8 @@
   .method public hidebysig newslot virtual 
           instance void  AutoCompleteAttach([in][opt] object&  marshal( struct) Reserved) runtime managed internalcall
   {
-    .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibFuncAttribute::.ctor(int16) = ( 01 00 40 00 00 00 )                               // ..@...
     .custom instance void [mscorlib]System.Runtime.InteropServices.DispIdAttribute::.ctor(int32) = ( 01 00 0C 00 00 00 00 00 ) 
+    .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibFuncAttribute::.ctor(int16) = ( 01 00 40 00 00 00 )                               // ..@...
     .override SHDocVw.IShellUIHelper3::AutoCompleteAttach
   } // end of method ShellUIHelperClass::AutoCompleteAttach
 
@@ -14840,20 +14840,20 @@
 .class interface public abstract auto ansi import SHDocVw.ShellUIHelper
        implements SHDocVw.IShellUIHelper3
 {
-  .custom instance void [mscorlib]System.Runtime.InteropServices.CoClassAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 1A 53 48 44 6F 63 56 77 2E 53 68 65 6C 6C   // ...SHDocVw.Shell
-                                                                                                                          55 49 48 65 6C 70 65 72 43 6C 61 73 73 00 00 )    // UIHelperClass..
   .custom instance void [mscorlib]System.Runtime.InteropServices.GuidAttribute::.ctor(string) = ( 01 00 24 35 32 38 44 46 32 45 43 2D 44 34 31 39   // ..$528DF2EC-D419
                                                                                                   2D 34 30 42 43 2D 39 42 36 44 2D 44 43 44 42 46   // -40BC-9B6D-DCDBF
                                                                                                   39 43 31 42 32 35 44 00 00 )                      // 9C1B25D..
+  .custom instance void [mscorlib]System.Runtime.InteropServices.CoClassAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 1A 53 48 44 6F 63 56 77 2E 53 68 65 6C 6C   // ...SHDocVw.Shell
+                                                                                                                          55 49 48 65 6C 70 65 72 43 6C 61 73 73 00 00 )    // UIHelperClass..
 } // end of class SHDocVw.ShellUIHelper
 
 .class interface public abstract auto ansi import SHDocVw.DShellNameSpaceEvents
 {
-  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 00 10 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.InterfaceTypeAttribute::.ctor(int16) = ( 01 00 02 00 00 00 ) 
   .custom instance void [mscorlib]System.Runtime.InteropServices.GuidAttribute::.ctor(string) = ( 01 00 24 35 35 31 33 36 38 30 36 2D 42 32 44 45   // ..$55136806-B2DE
                                                                                                   2D 31 31 44 31 2D 42 39 46 32 2D 30 30 41 30 43   // -11D1-B9F2-00A0C
                                                                                                   39 38 42 43 35 34 37 00 00 )                      // 98BC547..
-  .custom instance void [mscorlib]System.Runtime.InteropServices.InterfaceTypeAttribute::.ctor(int16) = ( 01 00 02 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 00 10 00 00 ) 
   .method public hidebysig newslot abstract virtual 
           instance void  FavoritesSelectionChange([in] int32 cItems,
                                                   [in] int32 hItem,
@@ -14888,10 +14888,10 @@
 
 .class interface public abstract auto ansi import SHDocVw.IShellFavoritesNameSpace
 {
-  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 50 10 00 00 )                               // ..P...
   .custom instance void [mscorlib]System.Runtime.InteropServices.GuidAttribute::.ctor(string) = ( 01 00 24 35 35 31 33 36 38 30 34 2D 42 32 44 45   // ..$55136804-B2DE
                                                                                                   2D 31 31 44 31 2D 42 39 46 32 2D 30 30 41 30 43   // -11D1-B9F2-00A0C
                                                                                                   39 38 42 43 35 34 37 00 00 )                      // 98BC547..
+  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 50 10 00 00 )                               // ..P...
   .method public hidebysig newslot abstract virtual 
           instance void  MoveSelectionUp() runtime managed internalcall
   {
@@ -15737,8 +15737,8 @@
 .class public auto ansi sealed SHDocVw.DShellNameSpaceEvents_FavoritesSelectionChangeEventHandler
        extends [mscorlib]System.MulticastDelegate
 {
-  .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
   .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 10 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
   .method public specialname rtspecialname 
           instance void  .ctor(object A_1,
                                native uint A_2) runtime managed
@@ -15760,8 +15760,8 @@
 .class public auto ansi sealed SHDocVw.DShellNameSpaceEvents_SelectionChangeEventHandler
        extends [mscorlib]System.MulticastDelegate
 {
-  .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
   .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 10 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
   .method public specialname rtspecialname 
           instance void  .ctor(object A_1,
                                native uint A_2) runtime managed
@@ -15777,8 +15777,8 @@
 .class public auto ansi sealed SHDocVw.DShellNameSpaceEvents_DoubleClickEventHandler
        extends [mscorlib]System.MulticastDelegate
 {
-  .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
   .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 10 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
   .method public specialname rtspecialname 
           instance void  .ctor(object A_1,
                                native uint A_2) runtime managed
@@ -15794,8 +15794,8 @@
 .class public auto ansi sealed SHDocVw.DShellNameSpaceEvents_InitializedEventHandler
        extends [mscorlib]System.MulticastDelegate
 {
-  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 10 00 00 00 ) 
   .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 10 00 00 00 ) 
   .method public specialname rtspecialname 
           instance void  .ctor(object A_1,
                                native uint A_2) runtime managed
@@ -15817,11 +15817,11 @@
   .custom instance void [mscorlib]System.Runtime.InteropServices.GuidAttribute::.ctor(string) = ( 01 00 24 32 46 32 46 31 46 39 36 2D 32 42 43 31   // ..$2F2F1F96-2BC1
                                                                                                   2D 34 42 31 43 2D 42 45 32 38 2D 45 41 33 37 37   // -4B1C-BE28-EA377
                                                                                                   34 46 34 36 37 36 41 00 00 )                      // 4F4676A..
-  .custom instance void [mscorlib]System.Runtime.InteropServices.ClassInterfaceAttribute::.ctor(int16) = ( 01 00 00 00 00 00 ) 
   .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(int16) = ( 01 00 02 00 00 00 ) 
   .custom instance void [mscorlib]System.Runtime.InteropServices.ComSourceInterfacesAttribute::.ctor(string) = ( 01 00 1F 53 48 44 6F 63 56 77 2E 44 53 68 65 6C   // ...SHDocVw.DShel
                                                                                                                  6C 4E 61 6D 65 53 70 61 63 65 45 76 65 6E 74 73   // lNameSpaceEvents
                                                                                                                  00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.ClassInterfaceAttribute::.ctor(int16) = ( 01 00 00 00 00 00 ) 
   .method public specialname rtspecialname 
           instance void  .ctor() runtime managed internalcall
   {
@@ -17334,8 +17334,8 @@
        extends [mscorlib]System.Object
        implements SHDocVw.DShellWindowsEvents
 {
-  .custom instance void [mscorlib]System.Runtime.InteropServices.ClassInterfaceAttribute::.ctor(valuetype [mscorlib]System.Runtime.InteropServices.ClassInterfaceType) = ( 01 00 00 00 00 00 00 00 ) 
   .custom instance void [mscorlib]System.Runtime.InteropServices.TypeLibTypeAttribute::.ctor(valuetype [mscorlib]System.Runtime.InteropServices.TypeLibTypeFlags) = ( 01 00 10 00 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.ClassInterfaceAttribute::.ctor(valuetype [mscorlib]System.Runtime.InteropServices.ClassInterfaceType) = ( 01 00 00 00 00 00 00 00 ) 
   .field public class SHDocVw.DShellWindowsEvents_WindowRegisteredEventHandler m_WindowRegisteredDelegate
   .field public class SHDocVw.DShellWindowsEvents_WindowRevokedEventHandler m_WindowRevokedDelegate
   .field public int32 m_dwCookie
