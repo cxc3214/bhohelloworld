@@ -7,3 +7,5 @@ E:\.net\BHO\BHO_helloWorld\una_register\obj\Release\una_register.Properties.Reso
 E:\.net\BHO\BHO_helloWorld\una_register\obj\Release\una_register.csproj.GenerateResource.Cache
 E:\.net\BHO\BHO_helloWorld\una_register\obj\Release\comReg.exe
 E:\.net\BHO\BHO_helloWorld\una_register\obj\Release\comReg.pdb
+E:\工作\测试库\vs\BHO\BHO_helloWorld\una_register\obj\Release\comReg.exe
+E:\工作\测试库\vs\BHO\BHO_helloWorld\una_register\obj\Release\comReg.pdb
