@@ -1,0 +1,9 @@
+E:\.net\BHO\BHO_helloWorld\una_register\bin\Release\comReg.exe
+E:\.net\BHO\BHO_helloWorld\una_register\bin\Release\comReg.pdb
+E:\.net\BHO\BHO_helloWorld\una_register\bin\Release\IrisSkin2.dll
+E:\.net\BHO\BHO_helloWorld\una_register\obj\Release\ResolveAssemblyReference.cache
+E:\.net\BHO\BHO_helloWorld\una_register\obj\Release\una_register.intall.resources
+E:\.net\BHO\BHO_helloWorld\una_register\obj\Release\una_register.Properties.Resources.resources
+E:\.net\BHO\BHO_helloWorld\una_register\obj\Release\una_register.csproj.GenerateResource.Cache
+E:\.net\BHO\BHO_helloWorld\una_register\obj\Release\comReg.exe
+E:\.net\BHO\BHO_helloWorld\una_register\obj\Release\comReg.pdb

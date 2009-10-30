@@ -1,0 +1,7 @@
+E:\.net\BHO\BHO_helloWorld\bho_Test\bin\Release\bho_Test.dll
+E:\.net\BHO\BHO_helloWorld\bho_Test\bin\Release\bho_Test.pdb
+E:\.net\BHO\BHO_helloWorld\bho_Test\bin\Release\bho_Test.tlb
+E:\.net\BHO\BHO_helloWorld\bho_Test\bin\Release\Interop.SHDocVw.dll
+E:\.net\BHO\BHO_helloWorld\bho_Test\obj\Release\ResolveAssemblyReference.cache
+E:\.net\BHO\BHO_helloWorld\bho_Test\obj\Release\bho_Test.dll
+E:\.net\BHO\BHO_helloWorld\bho_Test\obj\Release\bho_Test.pdb
