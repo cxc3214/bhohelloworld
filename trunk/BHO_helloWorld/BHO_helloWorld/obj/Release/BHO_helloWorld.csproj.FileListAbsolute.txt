@@ -1,5 +1,8 @@
+E:\.net\BHO\BHO_helloWorld\BHO_helloWorld\bin\Debug\BHO_helloWorld.dll
 E:\.net\BHO\BHO_helloWorld\BHO_helloWorld\bin\Release\BHO_helloWorld.dll
 E:\.net\BHO\BHO_helloWorld\BHO_helloWorld\bin\Release\BHO_helloWorld.pdb
 E:\.net\BHO\BHO_helloWorld\BHO_helloWorld\bin\Release\Interop.SHDocVw.dll
-E:\.net\BHO\BHO_helloWorld\BHO_helloWorld\bin\Release\BHO_helloWorld.tlb
-E:\.net\BHO\BHO_helloWorld\BHO_helloWorld\bin\Debug\BHO_helloWorld.dll
+E:\.net\BHO\BHO_helloWorld\BHO_helloWorld\obj\Release\ResolveAssemblyReference.cache
+E:\.net\BHO\BHO_helloWorld\BHO_helloWorld\obj\Release\BHO_helloWorld.dll
+E:\.net\BHO\BHO_helloWorld\BHO_helloWorld\obj\Release\BHO_helloWorld.pdb
+E:\.net\BHO\BHO_helloWorld\BHO_helloWorld\obj\Release\BHO_helloWorld.csproj.ResolveComReference.cache

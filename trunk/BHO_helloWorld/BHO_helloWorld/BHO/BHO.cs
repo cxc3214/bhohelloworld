@@ -15,6 +15,7 @@ namespace BHO_HelloWorld
     [
     ComVisible(true),
     Guid("8a194578-81ea-4850-9911-13ba2d71efbd"),
+    //ClassInterface(ComInterfaceType.None)
     ClassInterface(ClassInterfaceType.None)
     ]
     public class BHO : IObjectWithSite
