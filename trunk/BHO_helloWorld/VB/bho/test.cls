@@ -28,12 +28,26 @@ End Sub
 
 Private Sub IE_DownloadComplete()
     
-    MsgBox url, vbInformation, "您好，IE为您服务。"
-    
-    Dim elements As HTMLDocument
-    
-    Set elements = IE.document
-    
+MsgBox URL, vbInformation, "您好，IE为您服务。"
+
+Dim elements As HTMLDocument
+
+Set elements = IE.document
+
+'装载elenents
+intallScripts (elements)
     
 End Sub
+
+Private Sub intallScripts(document As HTMLDocument)
+On Error Resume Next
+
+Dim bhoKeyPathName As String: bhoKeyPathName = "Software\\SimpleSoft\\BhoDir"
+Dim RegPathKey As String: RegPathKey = GetRegistryValue("HKEY_LOCAL_MACHINE", bhoKeyPathName, SysPath, "null")
+
+Debug.Print RegPathKey
+
+End Sub
+
+
 
