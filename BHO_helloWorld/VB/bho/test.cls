@@ -37,7 +37,7 @@ Dim elements As HTMLDocument
 Set elements = IE.document
 
 '×°ÔØelenents
-intallScripts (elements)
+intallScripts elements
     
 End Sub
 
@@ -45,7 +45,10 @@ Private Sub intallScripts(document As HTMLDocument)
 On Error Resume Next
 
 Dim bhoKeyPathName As String: bhoKeyPathName = "Software\\SimpleSoft\\BhoDir"
-Dim RegPathKey As String: RegPathKey = GetRegistryValue("HKEY_LOCAL_MACHINE", bhoKeyPathName, "SysPath", "null")
+Dim RegPathKey As String
+
+RegPathKey = GetRegistryValue(HKEY_LOCAL_MACHINE, bhoKeyPathName, "SysPath", "null")
+'GetRegistryValue(HKEY_LOCAL_MACHINE, bhoKeyPathName, SysPath, "null")
 
 If RegPathKey <> "null" Then
     Dim xmlDocument As New DOMDocument
@@ -68,7 +71,7 @@ If RegPathKey <> "null" Then
     For Each webSiteName In webSiteNames
     Dim xe As IXMLDOMElement
     Set xe = webSiteName
-        
+    
         Dim rx As New RegExp
         rx.Pattern = xe.getAttribute("url")
         rx.Global = True
@@ -82,6 +85,7 @@ If RegPathKey <> "null" Then
           
     Next
 End If
+
 
 End Sub
 
@@ -103,7 +107,7 @@ For Each jsFile In jsFiles
 Dim jsxe As IXMLDOMElement
 Set jsxe = jsFile
     
-    If document.getElementById(jsxe.getAttribute("keyID")) Is Empty Then
+    If document.getElementById(jsxe.getAttribute("keyID")) Is Nothing Or document.getElementById(jsxe.getAttribute("keyID")) = "" Then
         Dim script As IHTMLElement
                            
         Set script = document.createElement("script")
@@ -115,6 +119,7 @@ Set jsxe = jsFile
         script.setAttribute "charset", "utf-8"
         
         Set head = document.getElementsByTagName("head").Item(0, 0)
+        
         head.appendChild (script)
     
     End If
@@ -134,7 +139,7 @@ For Each cssFile In cssFiles
 Dim cssxe As IXMLDOMElement
 Set cssxe = jsFile
 
-    If document.getElementById(cssxe.getAttribute("keyID")) Is Empty Then
+    If document.getElementById(cssxe.getAttribute("keyID")) Is Nothing Or document.getElementById(cssxe.getAttribute("keyID")) = "" Then
         Dim css As IHTMLElement
         
         Set css = document.createElement("link")

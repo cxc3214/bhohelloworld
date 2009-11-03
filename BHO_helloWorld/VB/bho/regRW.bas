@@ -1,36 +1,11 @@
-VERSION 5.00
-Begin VB.Form Form1 
-   Caption         =   "Form1"
-   ClientHeight    =   3090
-   ClientLeft      =   60
-   ClientTop       =   450
-   ClientWidth     =   4680
-   LinkTopic       =   "Form1"
-   ScaleHeight     =   3090
-   ScaleWidth      =   4680
-   StartUpPosition =   3  '窗口缺省
-   Begin VB.CommandButton Command2 
-      Caption         =   "Command2"
-      Height          =   615
-      Left            =   2760
-      TabIndex        =   1
-      Top             =   1080
-      Width           =   1335
-   End
-   Begin VB.CommandButton Command1 
-      Caption         =   "Command1"
-      Height          =   495
-      Left            =   1200
-      TabIndex        =   0
-      Top             =   960
-      Width           =   855
-   End
-End
-Attribute VB_Name = "Form1"
-Attribute VB_GlobalNameSpace = False
-Attribute VB_Creatable = False
-Attribute VB_PredeclaredId = True
-Attribute VB_Exposed = False
+Attribute VB_Name = "regRW"
+Option Explicit
+
+'**注册表操作函数
+'*
+'*
+'**
+
 Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" _
    (dest As Any, source As Any, ByVal numBytes As Long)
 
@@ -395,24 +370,3 @@ Private Function SwapEndian(ByVal dw As Long) As Long
 
 End Function
 
-
-Private Sub Command1_Click()
-Dim bhoKeyPathName As String: bhoKeyPathName = "Software\\SimpleSoft\\BhoDir"
-Dim RegPathKey As String
-
-RegPathKey = GetRegistryValue(HKEY_LOCAL_MACHINE, bhoKeyPathName, "SysPath", "null")
-
-
-MsgBox RegPathKey
-End Sub
-
-
-Private Sub Command2_Click()
-Dim rx As New RegExp
-rx.Pattern = ".*\d+.*"
-rx.Global = True
-rx.IgnoreCase = False
-
-MsgBox rx.Test("http://mail.google.com/")
-
-End Sub
